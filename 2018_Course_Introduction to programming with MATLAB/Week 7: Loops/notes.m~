@@ -141,6 +141,19 @@ rng(0); A = randn(5)
 A(A<0) = 101:108        %these are assigned in the column major order
 
 rng(0); A = randn(5);
-A(A<0) = 101:108'       %th
+A(A<0) = 101:108'       %tranposing makes no difference
+
+% note that the number of values to be changed must equal the number of the
+% replacement values, otherwise this will not work
+
+% Logical indexing on both sides:
+rng(0); A = randn(5);
+A(A>0.1) = sqrt(A(A>0.1))
+
+% Multiple arrays and logical indexing:
+
+A = [89 82 11 53;33 5 59 42]
+B = [34 44 52 64;62 73 58 99]
+A((A>B)) = A(A>B) - B(A>B)
 
 %% PREALLOCATION

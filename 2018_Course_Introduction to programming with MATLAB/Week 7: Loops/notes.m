@@ -148,6 +148,24 @@ A(A<0) = 101:108'       %tranposing makes no difference
 
 % Logical indexing on both sides:
 rng(0); A = randn(5);
-A(A>0.1) = sqrt(A(A>0.1))
+A(A>0.1) = sqrt(A(A>0.1)) % the same amount of elements has to "fed and eaten" by the logical indexing on both sides
+
+% Multiple arrays and logical indexing:
+
+A = [89 82 11 53;33 5 59 42]
+B = [34 44 52 64;62 73 58 99]
+A((A>B)) = A(A>B) - B(A>B)    
 
 %% PREALLOCATION
+
+% How to time a function?
+
+tic; sum(1:1e3); toc
+tic; sum(1:1e8); toc
+
+% See noprealloc, prealloc
+
+% Preallocation means allocating the needed amount of memory for a function
+% It should be used always if you know the dimensions of a big array
+
+
