@@ -1,4 +1,0 @@
-% input 1: v, vector
-% input 2: n, positive integer
-% output 1: product, the largest product of n consecutive elements of v
-% output 2: ind, the index of the 
