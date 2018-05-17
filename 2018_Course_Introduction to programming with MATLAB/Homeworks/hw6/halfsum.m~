@@ -1,0 +1,17 @@
+% The function computes the sum of the elements of A that are in the lower
+% right triangular part of A.
+% input: A, an at most two-dimensional array
+% output: hsum, the sum of elements in the lower right triangular of A
+
+function hsum = halfsum(A)
+hsum = sum(A(end:end))
+
+
+[m,n] = size(A);
+hsum = 0;
+for i = m:-1:1
+    for j = i:-1:1
+        hsum = hsum + A(i,j);
+    end
+end
+end

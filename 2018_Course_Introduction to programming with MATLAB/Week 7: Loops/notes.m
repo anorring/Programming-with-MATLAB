@@ -17,7 +17,7 @@ v = [5 5 7 8 8];
 w = u -v
 
 %the same with an explicitly loop
-for ii = 1_lenght(u)
+for ii = 1:lenght(u)
     w(ii) = u(ii) - v(ii);
 end
 
