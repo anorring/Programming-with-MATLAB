@@ -70,7 +70,7 @@ realmin('single')
 
 % string = text = vector of characters = vector whose element type is char
 
-% Example: the ASCII code
+% Example: the ASCII code, see char_codes
 
 function char_codes
 for ii = 33:126
@@ -265,3 +265,74 @@ course = struct('Area','CS','number',103,'title','Introductory Programming for E
 % used more freq. than structs
 
 % Syntax: to access the data a cell points to, use {}
+
+% See cells_of_text for an example of a cell with vectors of strings that
+% are of different length. 
+
+%% The ultimate legend of Big John
+page{1} = 'You could find...';
+page{2} = 'Tall, dark hair...';
+page{3} = 'They say...';
+page {4} = 'And when he...';
+page {5} = 'On Big John.';
+
+% check by whos
+% access the different elements of pages by using {}
+% class(page)
+% class(page{1})
+% size(page{1})
+
+%% Print it
+fprintf('\n');
+for ii = 1:length(page)
+    fprintf('%s\n',page{ii});
+end
+fprintf('\n');
+
+%% back to notes
+
+% examples of cell arrays:
+
+p = cell(2,3)               % a cell array
+p{2,1} = pi                 % assignment commands
+p{1,1} = int8(-17)
+p{2,2} = 'Awesome'
+p{2,3} = [2 4;6 8;10 12]
+p{1,3} = sum(p{2,3})
+p{1,2} = 1/0
+
+class(p)
+class(p{2,1})
+class(p(2,1))
+
+p{2,3}(3,2)             % retrieve the object from the cell
+
+ %%
+ 
+ c{1} = pi
+ c{2} = 'Cell or not cell?'
+ 
+ % see the object itself
+ c{1}
+ c{2}
+ 
+ % see the pointer
+ c(1)
+ c(2)
+ 
+ % a limitation:
+ c1 = {[1 2], [10,20]}
+ c2 = c1
+ c1{1,2}
+ c2{1,2}
+ c1{1,1} = 'strawberries'
+ c2{1,2}
+ c1{1,1}     % no two cell pointers can point to the same object, c2 points to copies
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
