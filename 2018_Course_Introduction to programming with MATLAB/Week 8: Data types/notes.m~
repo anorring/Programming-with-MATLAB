@@ -77,12 +77,157 @@ for ii = 33:126
     fprintf('s%', char(ii));
 end
 fprintf('\n');
+end
 
+%%
+% strings are vectors:
+MOOC_title = 'MATLAB for Smarties'
+length(MOOC_title)
+MOOC_title(1)
+MOOC_title(1:6)
+MOOC_title(end-8:end)
+
+a = MOOC_title(1:6)
+b = a(end:-1:1)         % print MATLAB backwards
+
+% a and b of the same dimensions
+a == b   % are the elements the same, but not whether a is the same as b
+
+%% 
+% How to convert chars into doubles?
+
+message = 'Let''s skip class today!'
+code = double(message)
+secret = char(code+3)       % encryption
+char(secret - 3)            % decode
+
+%% 
+% Can we have two dimensional array of chars?
+
+friends = ['Bill'; 'Mary'; 'John']
+line1 = '12345678'
+line2 = 'abcdefgh'
+txt = [line1;line2]
+txt'                                    % transpose, i.e. array operations can be used
+
+% Note: vertcat --> different dimensions
+% Note: strings should usually not be stored in arrays, because they are
+% often of different length
+
+%%
+% String functions
+
+char
+findstr
+ischar
+isletter
+isspace
+isstrprop
+num2str
+length
+lower
+sprintf
+strcmp
+strcmpi
+strmatch
+strncmp
+strncmpi
+str2num
+upper
+
+%%
+% find strings
+findstr(MOOC_title,'LAB')
+findstr(MOOC_title,'lab')
+findstr(MOOC_title,'r')
+
+% compare strings
+lang = 'MATLAB'
+strcmp(MOOC_title, lang)
+strcmp(MOOC_title(1:6), lang)
+
+strcmpi(MOOC_title(1:6), 'Matlab')   % ignoring case
+
+lower('MATLAB')
+
+% the difference between numbers and chars
+pi_number = 3.1416
+pi_digits = '3.1416'
+size(pi_number)
+size(pi_digits)
+class(pi_number)
+class(pi_digits)
+
+pi_number + 1
+pi_digits + 1
+double(pi_digits) + 1
+
+str2num(pi_digits) + 1
+num2str(pi_number) + 1
+
+%%
+% How to use sprintf?
+
+r = 12
+fprintf('The area of a circle with radius %2f is %2f!\n', r, pi*r^2);
+
+sprintf('The area of a circle with radius %2f is %2f!\n', r, pi*r^2); % puts the results into an output argument
+str = sprintf('The area of a circle with radius %2f is %2f!\n', r, pi*r^2);
 
 
 %% STRUCTS
 
+% an array must be homogenous, a struct can be heterogenous, i.e. it can
+% contain multiple types
 
+% Differences from an array:
+% fields, not elements
+% field names, not indices
+% fields in the same struct can have different types
+
+% a field of a struct can be another struct
+
+r.ssn = 12345678   % note the dot
+class(r)
+class(ssn)
+
+r.name = 'Homer Simpson'    % add a field into the struct
+
+r. address.street = '742 Evergreen Terrace' % the new field is a struct
+
+%%
+% struct functions
+
+getfield
+isfield
+setfield
+isstruct
+orderfields
+rmfields
+struct
+
+%%
+% in matlab: a struct that represents a bank account
+
+account.number = 12345678
+account.balance = 5000
+account.owner.name = 'Joe Smith'
+account.owner.email = 'joe@matlabmooc.com'
+
+class(account)
+class(account.balance)
+class(account.number)
+
+account.owner
+
+account(2).number = 7654321
+account(2).owner
+account(2).balance
+account(2).balance = 1000
+account(2).owner.name = 'Jane Farmer'
+
+account(1)
+account(2)
 
 
 
