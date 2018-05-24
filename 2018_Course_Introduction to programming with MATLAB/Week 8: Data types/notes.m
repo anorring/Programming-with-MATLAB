@@ -256,4 +256,12 @@ course = struct('Area','CS','number',103,'title','Introductory Programming for E
 
 %% CELLS
 
+% Pointer
+% each variable has an address that is stored in a variable called a
+% pointer, which is called a cell in MATLAB
 
+% a powerful way to store heterogenous data
+% cell arrays
+% used more freq. than structs
+
+% Syntax: to access the data a cell points to, use {}
