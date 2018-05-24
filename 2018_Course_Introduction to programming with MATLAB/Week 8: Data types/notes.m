@@ -329,6 +329,19 @@ p{2,3}(3,2)             % retrieve the object from the cell
  c2{1,2}
  c1{1,1}     % no two cell pointers can point to the same object, c2 points to copies
  
+ % Note: MATLAB allows for two types of pointers, the second more like the
+ % the flexible pointers in other languages
+ 
+ % Cell functions
+ 
+ cell
+ celldisp
+ cellfun
+ cellplot
+ cell2struct
+ deal
+ iscell
+ num2cell
  
  
  
