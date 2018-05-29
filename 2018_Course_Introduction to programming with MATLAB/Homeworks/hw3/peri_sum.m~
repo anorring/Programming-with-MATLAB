@@ -8,7 +8,7 @@
 % output: s, sum of elements that are on the perimeter of A (i.e. in the
 %           first and last rows and columns)
 
-% My function takes the four sides of the matrix and sums them:
+% My function takes the 
 function s = peri_sum(A)
 s = sum(A(1,:)) + sum(A(end,:)) + sum(A(2:end-1,1)) + sum(A(2:end-1,end));
 end
@@ -16,6 +16,6 @@ end
 %% A different solution:
 
 function s = peri_sum2(A)
-    B = A(2:end-1,2:end-1);     % define a smaller matrix B, that leaves the perimeter of A out
-    s = sum(A(:)) - sum(B(:));  % the sum is then the difference between A and B
+    B = A(2:end-1,2:end-1);
+    s = sum(A(:)) - sum(B(:));
 end

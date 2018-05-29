@@ -18,8 +18,15 @@
 % output: amag, a scalar equal to the magnitude of the acceleration
 
 function a = accelerate(F1,F2,m)
-    F = F1 + F2;                    % F from Newton's law, a column vector
-    f = sqrt(sum(F.^2));            % f is square root of the sum of squared elements in F
-    a = f/m;                        % a, accelaration is the ratio between f and mass
+    F = F1 + F2;                    % F from Newton's law
+    f = sqrt(sum(F.^2));            % 
+    a = f/m;
 end
 
+% Solution:
+
+function a = accelerate(F1,F2,m)
+    F = F1 + F2;
+    f = sqrt(sum(F.^2));
+    a = f/m;
+end

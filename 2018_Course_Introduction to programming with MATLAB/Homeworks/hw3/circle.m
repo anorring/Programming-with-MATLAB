@@ -9,6 +9,6 @@
 % output 2: cf, circumference of a circle with radius r, 2*pi*r
 
 function [area, cf] = circle(r) % function with one input and two outputs
-    area = r^2 * pi;            % the product of pi and squared radius 
-    cf = 2 * r * pi;            % 
+    area = r^2 * pi;            % the formula for area, product of pi and squared radius 
+    cf = 2 * r * pi;            % the formula for circumference
 end
