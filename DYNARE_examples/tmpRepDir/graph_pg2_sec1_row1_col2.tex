@@ -1,0 +1,76 @@
+\begin{tikzpicture}[baseline]\begin{axis}[%
+set layers,
+xminorticks=true,
+yminorticks=true,
+xticklabels={2014q3,2024q2,},
+xtick={1,40},
+y tick label style={
+/pgf/number format/.cd,
+fixed,
+precision=2,
+/tikz/.cd
+},
+x tick label style={rotate=0.000000},
+width=6.000000in,
+height=4.500000in,
+scale only axis,
+unbounded coords=jump,
+axis lines=box,
+title style={align=center},
+title=c,
+enlarge x limits=false,
+enlarge y limits=true,
+xmin = 1,
+xmax = 40,
+tick label style={font=\normalsize},
+]
+\pgfplotsset{every axis title/.append style={}}=[font=\normalsize]
+%zeroline
+\addplot[red,line width=.5,forget plot] coordinates {(1,0)(40,0)};
+%series c
+\addplot[color=black,solid,line width=0.500000pt,line join=round,name path=1]
+table[row sep=crcr]{
+x y\\
+1 -0.003092\\
+2 -0.002339\\
+3 -0.001646\\
+4 -0.001011\\
+5 -0.000428\\
+6 0.000106\\
+7 0.000592\\
+8 0.001038\\
+9 0.001445\\
+10 0.001812\\
+11 0.002146\\
+12 0.002446\\
+13 0.002719\\
+14 0.002961\\
+15 0.003174\\
+16 0.003364\\
+17 0.003539\\
+18 0.003690\\
+19 0.003824\\
+20 0.003943\\
+21 0.004049\\
+22 0.004132\\
+23 0.004208\\
+24 0.004268\\
+25 0.004320\\
+26 0.004359\\
+27 0.004387\\
+28 0.004410\\
+29 0.004420\\
+30 0.004424\\
+31 0.004417\\
+32 0.004414\\
+33 0.004397\\
+34 0.004372\\
+35 0.004349\\
+36 0.004324\\
+37 0.004282\\
+38 0.004249\\
+39 0.004212\\
+40 0.004164\\
+};
+\end{axis}
+\end{tikzpicture}%

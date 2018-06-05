@@ -6,7 +6,18 @@
 % input: filename, the name of a text file
 % output: digits_in_name, the number of digits in the name
 
-function digits_in_name = digit_counter(filename)
+function n = digit_counter(fname)
+    n = -1;
+    fid = fopen(fname,'r');
+    if fid >= 0
+        n = sum(isstrprop(fread(fid,inf,'char=>char'),'digit'));
+        fclose(fid);
+    end
+end
+
+%% My proposal:
+
+function digits_in_name = my_digit_counter(filename)
 fid = fopen(filename,'rt');         % Permission to read the file
 
 if fid<0

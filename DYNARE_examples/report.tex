@@ -1,0 +1,82 @@
+% Report Object
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.500000cm]{geometry}
+\usepackage{pdflscape, booktabs, pgfplots, colortbl, adjustbox, multicol}
+\pgfplotsset{compat=1.5.1}\makeatletter
+\def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
+\makeatother
+\usepgfplotslibrary{fillbetween}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\definecolor{Gray}{gray}{0.9}
+\usepackage{fancyhdr, datetime}
+\newdateformat{reportdate}{\THEDAY\ \shortmonthname\ \THEYEAR}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\rfoot{\scriptsize\reportdate\today\ -- \currenttime}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\setlength{\parindent}{0in}
+\setlength{\tabcolsep}{1em}
+\newlength\sectionheight
+\begin{document}
+\pgfplotsset{tick scale binop={\times},
+trim axis left}
+\centering
+
+% Page Object
+
+\begin{tabular}[t]{c}
+\multicolumn{1}{c}{\Large\bfseries Dseries/Report Example}\\
+\multicolumn{1}{c}{\large\bfseries Shock e}\\
+% Section Object
+\maxsizebox{\linewidth}{!}{%
+\begin{tabular}[t]{ll}
+\input{tmpRepDir/graph_pg1_sec1_row1_col1.tex} & \input{tmpRepDir/graph_pg1_sec1_row1_col2.tex}\\
+\input{tmpRepDir/graph_pg1_sec1_row2_col1.tex} & \input{tmpRepDir/graph_pg1_sec1_row2_col2.tex}\\
+\input{tmpRepDir/graph_pg1_sec1_row3_col1.tex} & \input{tmpRepDir/graph_pg1_sec1_row3_col2.tex}\\
+ \par \medskip  \par \medskip \\
+\end{tabular}}\\
+% End Section Object
+
+% Section Object
+\maxsizebox{\linewidth}{!}{%
+\begin{tabular}[t]{l}
+\input{tmpRepDir/table_pg1_sec2_row1_col1.tex}\\
+\end{tabular}}\\
+% End Section Object
+
+\end{tabular}
+\clearpage
+% End Page Object
+
+
+% Page Object
+
+\begin{tabular}[t]{c}
+\multicolumn{1}{c}{\Large\bfseries Dseries/Report Example}\\
+\multicolumn{1}{c}{\large\bfseries Shock u}\\
+% Section Object
+\maxsizebox{\linewidth}{!}{%
+\begin{tabular}[t]{ll}
+\input{tmpRepDir/graph_pg2_sec1_row1_col1.tex} & \input{tmpRepDir/graph_pg2_sec1_row1_col2.tex}\\
+\input{tmpRepDir/graph_pg2_sec1_row2_col1.tex} & \input{tmpRepDir/graph_pg2_sec1_row2_col2.tex}\\
+\input{tmpRepDir/graph_pg2_sec1_row3_col1.tex} & \input{tmpRepDir/graph_pg2_sec1_row3_col2.tex}\\
+ \par \medskip  \par \medskip \\
+\end{tabular}}\\
+% End Section Object
+
+% Section Object
+\maxsizebox{\linewidth}{!}{%
+\begin{tabular}[t]{l}
+\input{tmpRepDir/table_pg2_sec2_row1_col1.tex}\\
+\end{tabular}}\\
+% End Section Object
+
+\end{tabular}
+\clearpage
+% End Page Object
+
+\end{document}
+% End Report Object
